@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Moderator Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Moderator Access</h1>
+<input id="modId" placeholder="Enter Moderator ID">
+<button onclick="login()">Enter</button>
+<p id="status"></p>
+<script>
+async function login() {
+const modId = document.getElementById("modId").value;
+const res = await fetch("https://YOUR-WORKER-URL/auth", {
+method: "POST",
+body: JSON.stringify({ modId })
+});
+const data = await res.json();
+if(data.authorized){
+localStorage.setItem("modAuth","true");
+location.href="dashboard.html";
+} else {
+document.getElementById("status").textContent = "Access denied";
+}
+}
+</script>
+</body>
+</html>
