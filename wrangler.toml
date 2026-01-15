@@ -1,0 +1,8 @@
+name = "nonauto-levels-worker"
+compatibility_date = "2026-01-15"
+
+[env.production]
+account_id = "YOUR_CLOUDFLARE_ACCOUNT_ID"
+workers_dev = true
+route = ""
+zone_id = ""
