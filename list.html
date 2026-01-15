@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Non-Auto Lucky Levels List</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Non-Auto Lucky Levels List</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="list.html">List</a>
+<a href="submit.html">Submit</a>
+</nav>
+</header>
+<main>
+<h2>Levels</h2>
+<ul id="level-list"></ul>
+</main>
+<script>
+fetch('levels.json')
+.then(res => res.json())
+.then(levels => {
+const list = document.getElementById('level-list');
+levels.forEach(level => {
+const li = document.createElement('li');
+li.innerHTML = `<b>${level.name}</b> - Creator: ${level.creator} - Submitted by: ${level.submitter}`;
+list.appendChild(li);
+});
+});
+</script>
+</body>
+</html>
