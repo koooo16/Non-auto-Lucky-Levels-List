@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Level Verification</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Non-Auto Lucky Levels List</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="list.html">List</a>
+  </nav>
+</header>
+
+<main>
+  <button id="openModal" class="submit-btn">Submit Level Verification</button>
+</main>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+
+    <h2>Submit a Non-Auto Lucky Level</h2>
+
+    <form>
+      <label>
+        Level Name
+        <input type="text" required>
+      </label>
+
+      <label>
+        Refresh Rate (Hz)
+        <input type="number" placeholder="60 / 144 / 240" required>
+      </label>
+
+      <label>
+        Trigger Chances
+        <input type="text" placeholder="e.g. 1 in 5 per attempt" required>
+      </label>
+
+      <label>
+        Approximate Time to Beat
+        <input type="text" placeholder="e.g. 45 seconds" required>
+      </label>
+
+      <label>
+        How rare is it?
+        <input type="text" placeholder="1 out of ???" required>
+      </label>
+
+      <button type="submit">Submit</button>
+    </form>
+
+  </div>
+</div>
+
+<script src="modal.js"></script>
+</body>
+</html>
